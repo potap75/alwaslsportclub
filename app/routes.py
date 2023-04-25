@@ -106,6 +106,7 @@ def add_person():
         image = form.image.data
         filename = secure_filename(image.filename)
         image_path = os.path.join(app.config['UPLOAD_PATH'], filename)
+        print(f"{image_path}")
         # file_ext = os.path.splitext(filename)[1]
         # if file_ext != validate_image(image.stream):
         #     return "Invalid image", 400
@@ -115,7 +116,7 @@ def add_person():
         db.session.add(new_person)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template("add_person.html", form=form)
+    return render_template("add_person.html", form=form, person=new_person)
 
 
 
