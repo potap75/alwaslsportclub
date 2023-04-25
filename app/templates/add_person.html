@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+            <h2>Adding New Person</h2>
+    <form method="POST" action="/add_person" enctype="multipart/form-data">
+
+                {{ form.csrf_token }}
+        {{ form.group.label }} {{ form.group }} <br>
+        {{ form.name.label }} {{ form.name }} <br>
+        {{ form.mobile.label }} {{ form.mobile }} <br>
+        {{ form.nationality.label }} {{ form.nationality }} <br>
+        {{ form.department.label }} {{ form.department }} <br>
+        {{ form.position.label }} {{ form.position }} <br>
+        {{ form.team.label }} {{ form.team }} <br>
+        {{ form.sport.label }} {{ form.sport }} <br>
+        {{ form.image.label }} {{ form.image }} <br>
+        {{ form.submit.label }} {{ form.submit }} <br>
+
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to Al Wasl Sports Club</h1><br>
+
+   <a href=" {{ url_for('get_all_persons')}}">All Persons</a><br>
+
+    <a href=" {{ url_for('add_person')}}">Add a Person</a><br>
+{% endblock %}

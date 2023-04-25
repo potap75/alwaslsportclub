@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<table>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Nationality</th>
+            <th>Department</th>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Sport</th>
+            <th>Photo</th>
+        </tr>
+    {% for person in persons: %}
+        <tr>
+            <td>{{ person.type }}</td>
+            <td>{{ person.name }}</td>
+            <td>{{ person.mobile }}</td>
+            <td>{{ person.nationality }}</td>
+            <td>{{ person.department }}</td>
+            <td>{{ person.position }}</td>
+            <td>{{ person.team }}</td>
+            <td>{{ person.sport }}</td>
+            <td>
+                <img src = '{{ person.image }}' alt="located at {{person.image}}">
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+
+<a href="{{url_for('add_person')}}">Add Person</a>
+{% endblock %}
